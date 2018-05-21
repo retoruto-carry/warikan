@@ -57,13 +57,13 @@
   import app from './App';
 
   export default {
+    data() {
+      return {
+        newUserId: 0,
+        newAmount: 0
+      }
+    },
     methods: {
-      data() {
-        return {
-          newUserId: 0,
-          newAmount: 0
-        }
-      },
       pop() {
         this.pageStack.pop();
       },
