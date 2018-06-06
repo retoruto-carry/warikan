@@ -31,10 +31,12 @@
     <v-ons-list modifier="inset">
       <v-ons-list-header>支払い履歴</v-ons-list-header>
       <div v-if="this.txs.length">
-        <v-ons-list-item modifier="longdivider" v-for="(tx,index) in this.txs">
-            <span @click="$emit('delete',index)">x　　</span>
-            ID : {{tx.userId}} : {{ tx.amount }} 円
-        </v-ons-list-item>
+        <div v-for="(tx,index) in this.txs">
+          <v-ons-list-item modifier="longdivider">
+              <span @click="$emit('delete',index)">x　　</span>
+              ID : {{tx.userId}} : {{ tx.amount }} 円
+          </v-ons-list-item>
+        </div>
       </div>
       <div v-else>
         <v-ons-list-item  modifier="longdivider">支払い履歴はないよ～</v-ons-list-item>
